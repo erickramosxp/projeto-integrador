@@ -1,0 +1,27 @@
+{
+  "name": "controle-de-estoque",
+  "version": "1.0.0",
+  "description": " Um sistema de controle de estoque para atender às demandas de empresas modernas. O foco inicial está na implementação de funcionalidades como o cadastro de fornecedores, permitindo o registro e a gestão de informações essenciais sobre parceiros de negócios. O sistema será uma ferramenta estratégica para otimizar a gestão de produtos e aumentar a eficiência operacional.",
+  "keywords": [
+    "nodejs",
+    "express",
+    "estoque",
+    "gerenciamento",
+    "api"
+  ],
+  "homepage": "https://github.com/erickramosxp/projeto-integrador#readme",
+  "bugs": {
+    "url": "https://github.com/erickramosxp/projeto-integrador/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickramosxp/projeto-integrador.git"
+  },
+  "license": "ISC",
+  "author": "erickramosxp",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 1"
+  }
+}

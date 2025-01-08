@@ -5,6 +5,8 @@ import Header from "@/components/Header"
 import styled from "styled-components"
 import FormRegisterProduct from "@/components/FormRegisterProduct"
 import { useState } from "react"
+import { productService } from "@/service/productService"
+import useSWR from "swr"
 
 const Menu = styled.div`
     ul {
@@ -23,8 +25,17 @@ const Menu = styled.div`
     }
 `
 
+const fetcher = async () => {
+    const response = await productService.getAll();
+    return response;
+  };
+
 export default function Produtos() {
     const [modal, setModal] = useState(false);
+    const {data: produtos, error} = useSWR("produtos", fetcher,{
+        revalidateOnFocus: false,
+        dedupingInterval: 60000, 
+    })
 
     return (
         <Container>
@@ -37,6 +48,8 @@ export default function Produtos() {
             </Menu>
             {modal &&
             <FormRegisterProduct setModal={setModal}/>}
+            {produtos && produtos.map( (produto: any) =>
+            <div key={produto.id}>{produto.nome}</div>)}
         </Container>
     )
 }
